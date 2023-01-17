@@ -22,7 +22,7 @@ nodeMailerSending.sendEmailVerification = (name, email, confirmationCode) => {
     html: `<h4>Email Confirmation</h4>
             <p>Hello ${name}</p>
             <p>Thank you for signing up to HRSpace Platform. Please confirm your email by clicking on the following link</p>
-           <p><a href=https://hrspace.netlify.app//verification/${confirmationCode}> Click here</a></p>
+           <p><a href=https://hrspace.netlify.app/verification/${confirmationCode}> Click here</a></p>
             Cheers,
             </div>`,
   };
