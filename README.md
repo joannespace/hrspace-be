@@ -1,4 +1,4 @@
-# HRSpace User Stories Update
+# HRSpace User Stories
 
 ####  HRSpace is a human resources platform that supports HR in the employees' database management and paperwork process with an ease.
 
