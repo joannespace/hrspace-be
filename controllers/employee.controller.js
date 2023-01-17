@@ -196,21 +196,23 @@ employeeController.createManyEmployees = catchAsync(async (req, res, next) => {
     if (newEmployee.password) {
       userPassword = newEmployee.password;
 
-      newEmployee.password = await bcrypt.hash(newEmployee.password, salt);
-      await newEmployee.save();
-
       userCriteria.password = userPassword;
     } else {
-      userPassword = userCriteria.password = utilsHelper.generatePassword();
+      userCriteria.password = userPassword = utilsHelper.generatePassword();
     }
 
     const newUser = await User.create(userCriteria);
 
     const token = await jwt.sign({ email: newUser.email }, nodeMailerSecretKey);
 
-    newUser.password = await bcrypt.hash(userPassword, salt);
+    const bcryptPass = await bcrypt.hash(userPassword, salt);
+
+    newUser.password = bcryptPass;
     newUser.confirmationCode = token;
     await newUser.save();
+
+    newEmployee.password = bcryptPass;
+    await newEmployee.save();
 
     const currentUser = await User.findOne({ _id: userId, isDeleted: false });
 
@@ -564,7 +566,6 @@ employeeController.deleteEmployee = catchAsync(async (req, res, next) => {
   const foundUser = await User.findOne({ _id: id, isDeleted: false });
   foundUser.activated = false;
   foundUser.confirmationCode = undefined;
-  foundUser.password = undefined;
   foundUser.isDeleted = true;
   await foundUser.save();
 

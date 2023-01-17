@@ -156,7 +156,11 @@ userControllers.activateUser = catchAsync(async (req, res, next) => {
     await employee.save();
   }
 
-  let newUser = await User.findOne({ _id: id, isDeleted: false });
+  let newUser = await User.findOne({
+    _id: id,
+    activated: false,
+    isDeleted: false,
+  });
 
   if (newUser)
     throw new AppError(
