@@ -22,7 +22,7 @@ nodeMailerSending.sendEmailVerification = (name, email, confirmationCode) => {
     html: `<h4>Email Confirmation</h4>
             <p>Hello ${name}</p>
             <p>Thank you for signing up to HRSpace Platform. Please confirm your email by clicking on the following link</p>
-           <p><a href=http://localhost:3000/verification/${confirmationCode}> Click here</a></p>
+           <p><a href=https://hrspace.netlify.app//verification/${confirmationCode}> Click here</a></p>
             Cheers,
             </div>`,
   };
@@ -57,7 +57,7 @@ nodeMailerSending.sendPasswordEmail = (name, email, password) => {
     subject: "HRSpace| Reset Password",
     html: `<h4>HRSpace| Password Access To HRSpace Platform</h4>
               <p>Hello ${name}</p>
-              <p>Below is your password to access to <a href=http://localhost:3000/>HRSpace</a> platform. Please keep it personally. </p>
+              <p>Below is your password to access to <a href=https://hrspace.netlify.app/>HRSpace</a> platform. Please keep it personally. </p>
               <ul>
               <li>Email: ${email}</li>
               <li>Password: ${password}</li>
@@ -104,7 +104,7 @@ nodeMailerSending.sendPasswordAndVerification = (
                 <p>Hello ${name}</p>
                 <p>This email was sent to you via ${currentUserEmail}</p>
                 <p>Please confirm your email by clicking on the following link</p>
-                <p><a href=http://localhost:3000/verification/${confirmationCode}> Click here</a></p>
+                <p><a href=https://hrspace.netlify.app/verification/${confirmationCode}> Click here</a></p>
                 <p>After verification success, you can access to HRSpace platform via the following password. Please keep it personally. </p>
                 <ul>
                 <li>Email: ${email}</li>
