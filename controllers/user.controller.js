@@ -156,13 +156,13 @@ userControllers.activateUser = catchAsync(async (req, res, next) => {
     await employee.save();
   }
 
-  let newUser = await User.findOne({
+  let foundUser = await User.findOne({
     _id: id,
-    activated: true,
+    activated: false,
     isDeleted: false,
   });
 
-  if (newUser)
+  if (!foundUser)
     throw new AppError(
       401,
       "Employee existed in user database",
@@ -181,21 +181,19 @@ userControllers.activateUser = catchAsync(async (req, res, next) => {
   const salt = await bcrypt.genSalt(10);
   let bcryptPass = await bcrypt.hash(password, salt);
 
-  newUser = await User.create({
-    _id: id,
-    name: employee.name,
-    email: employee.email,
-    password: bcryptPass,
-    role: employee.role,
-    generatedBy: userId,
-    company: employee.company,
-    confirmationCode: token,
-  });
+  foundUser.email = employee.email;
+  foundUser.name = employee.name;
+  foundUser.password = bcryptPass;
+  foundUser.role = employee.role;
+  foundUser.generatedBy = userId;
+  foundUser.company = employee.company;
+  foundUser.confirmationCode = token;
+  await foundUser.save();
 
   employee.userGenerated = true;
   await employee.save();
 
-  sendResponse(res, 200, true, newUser, null, "Create User Success");
+  sendResponse(res, 200, true, foundUser, null, "Create User Success");
 });
 
 userControllers.resetPassword = catchAsync(async (req, res, next) => {
