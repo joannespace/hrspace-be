@@ -158,7 +158,7 @@ userControllers.activateUser = catchAsync(async (req, res, next) => {
 
   let newUser = await User.findOne({
     _id: id,
-    activated: false,
+    activated: true,
     isDeleted: false,
   });
 
