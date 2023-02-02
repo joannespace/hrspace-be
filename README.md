@@ -24,57 +24,6 @@ By accessing employee detailed page, admin users can view or edit employees info
 
 When any paperwork created successfully, a related review for that paperwork will be automatically generated. This Review section is all for paperwork renew consideration. Admins can share the review by themeselves to remind the manager on review conduction.
 
-##### AUTHENTICATION
-- [ ] As a user, I can sign in with my email and password
-- [ ] As a user, I can use Gmail to login
-- [ ] As a user, I can register a new account with name, email, password, and company name or with Gmail
-- [ ] After signing up, I must verify my email via the verification email sent to my registered mail
-- [ ] As a user, I can sign in using Gmail
-- [ ] As a user, I can stay sign in after page refresh
-
-
-##### EMPLOYEES - ADMIN ROLE
-- [ ] As an admin, I can see lists of employees database that I or other company admins created. 
-- [ ] As an admin, I can search employees by name and filter by department, employment status, employment types
-- [ ] As an admin, I can create single employee at a time or create in bulk
-- [ ] As an admin, I can update employees' info or delete an employee (but can not delete myself)
-
-##### EMPLOYEES - MANAGER ROLE
-- [ ] As a manager, I can see lists of the employees under my management.
-- [ ] As a manager, I can search my employees by name and filter them as well.
-- [ ] As a manager, I can see my employees' detailed information, excluding their salaries.
-
-##### EMPLOYEES - EMPLOYEE ROLE
-- [ ] As an employee, I can see only me in the employee list.
-- [ ] As a staff, I can see my detailed info.
-
-##### PAPERWORKS 
-- [ ] As an admin, I can create a paperwork along with the review at the same time.
-- [ ] As an admin, I can view or delete a paperwork
-- [ ] As an admin, I can see the paperwork list of a specific employee.
-- [ ] As an admin, I can quickly update paperwork status and upload PDF paperwork to my Drive.
-- [ ] As an admin, I can generate a paperwork into PDF and download it.
-- [ ] As an employee, I can see all my paperwork.
-- [ ] As a manager, I can see my paperwork only, not other people.
-
-##### REVIEWS - ADMIN ROLE
-- [ ] As an admin, I can see the list of generated review
-- [ ] As an admin, I can search available review by its title or filter by status.
-- [ ] As an admin, I can create new review
-- [ ] As an admin, I can view, share, or delete an available review
-
-##### REVIEWS - EMPLOYEE ROLE
-- [ ] As an employee, I can see the list of my review
-- [ ] As an employee, I can have a detailed look at my review and its result
-
-##### REVIEWS - MANAGER ROLE
-- [ ] As a manager, I can see all the reviews of employees that I managed
-- [ ] As a manager, I can see access and evaluate my employees' review
-- [ ] As a manager, I can search review by title or filter by status
-
-##### TEMPLATES - ADMIN ROLE
-
-
 ### API Endpoints
 ##### AUTH APIs
 ````javascript
