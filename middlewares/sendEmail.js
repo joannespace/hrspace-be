@@ -104,7 +104,7 @@ nodeMailerSending.sendPasswordAndVerification = (
                 <p>Hello ${name}</p>
                 <p>This email was sent to you via ${currentUserEmail}</p>
                 <p>Please confirm your email by clicking on the following link</p>
-                <p><a href=http://localhost:3000/verification/${confirmationCode}> Click here</a></p>
+                <p><a href=https://hrspace.netlify.app/verification/${confirmationCode}> Click here</a></p>
                 <p>After verification success, you can access to HRSpace platform via the following password. Please keep it personally. </p>
                 <ul>
                 <li>Email: ${email}</li>
