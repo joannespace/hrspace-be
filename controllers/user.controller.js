@@ -190,9 +190,6 @@ userControllers.activateUser = catchAsync(async (req, res, next) => {
   foundUser.confirmationCode = token;
   await foundUser.save();
 
-  employee.userGenerated = true;
-  await employee.save();
-
   sendResponse(res, 200, true, foundUser, null, "Create User Success");
 });
 
