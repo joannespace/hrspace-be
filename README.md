@@ -319,8 +319,10 @@ When any paperwork created successfully, a related review for that paperwork wil
 
 ### Entity Relationship Diagram (ERD)
 
-![](https://i.imgur.com/Raq9z1U.png)
+![](https://i.imgur.com/8d1cRmD.png)
 
 ### Installation Instruction
 
 - Update later
+- Update info of person who updated the review
+- Add up `Internal Employee ID` for Employee Schema
