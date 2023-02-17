@@ -71,7 +71,6 @@ authControllers.verifyEmail = catchAsync(async (req, res, next) => {
   });
 
   employee.userGenerated = true;
-
   await employee.save();
 
   const accessToken = await user.generateToken();
