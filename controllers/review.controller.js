@@ -339,7 +339,7 @@ reviewController.shareReview = catchAsync(async (req, res, next) => {
   if (foundReview.reviewee.isDeleted)
     throw new AppError(400, "Reviewee was deleted ", "Share Review Error");
 
-  let link = `http://localhost:3000${path}`;
+  let link = `https://hrspace.netlify.app${path}`;
   let email = foundReview.reviewer.email;
 
   if (!email)
